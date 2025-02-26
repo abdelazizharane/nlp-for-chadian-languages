@@ -14,7 +14,7 @@ Le Tchad est un pays avec une large diversité linguistique et culturelle et com
 Nous avons entre autre :
 
 ::: {style="display: flex; align-items: center;"}
-<img src="images/chadian_diversity.png" style="margin-right: 20px;" width="892" height="231"/>
+<img src="images/chadian_diversity.png" width="150" style="margin-right: 20px;"/>
 
 **`Bagirmi, Buduma, Dajo, Dazaga, Ngambaye, Gidar, Gor, Gulay, Hadjaraï, Kanembou, Kera, Kotoko, Maba, Marba, Massa, Masalit, Mbaï, Misirié, Moubi, Moundang, Mousey, Sara, Teda, Toupouri, Waddaï et Zaghawa`.**
 :::
