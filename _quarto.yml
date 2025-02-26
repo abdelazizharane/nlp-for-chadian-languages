@@ -1,12 +1,11 @@
 project:
   type: website
   output-dir: docs
-  website:
-    title: "NLP for Chadian languages | Chad 👋🏿✍🏿🔊🔉🔈📣💭 "
-    description: "A website dedicated to Natural Language Processing for Chadian languages, exploring various linguistic and computational aspects."
-    url: https://abdelazizharane.github.io/nlp-for-chadian-languages/
-    baseurl: /nlp-for-chadian-languages
-    logo: images/logoblog.png
+  title: "NLP for Chadian languages | Chad 👋🏿✍🏿🔊🔉🔈📣💭 "
+  description: "A website dedicated to Natural Language Processing for Chadian languages, exploring various linguistic and computational aspects."
+  url: https://abdelazizharane.github.io/nlp-for-chadian-languages/
+  baseurl: /nlp-for-chadian-languages
+  logo: images/logoblog.png
     right:
       - index.qmd # Acceuil
       - about.qmd # A propos
