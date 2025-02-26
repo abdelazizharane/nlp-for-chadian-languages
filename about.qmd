@@ -1,5 +1,5 @@
 ---
-title: "A propos "
+title: "A propos"
 #image: monProfile.jpeg
 about:
   template: solana

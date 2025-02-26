@@ -9,10 +9,11 @@ website:
   navbar:
     right:
       - index.qmd # Acceuil
-      - blog.qmd  # les posts
-      - modelisation_langue.qmd # Modélisation des langues
-      # - corpus.qmd # Corpus
       - about.qmd # A propos
+      - blog.qmd  # les posts
+      - modelisation_language.qmd # Modélisation des langues
+      # - corpus.qmd # Corpus
+
       - icon: linkedin
         href: https://linkedin.com/in/abdel-aziz-harane
       - icon: github
@@ -20,13 +21,10 @@ website:
       - icon: youtube
         href: https://www.youtube.com/@chadainetwork
 
-
-
-
 format:
   html:
     theme:
-      light: cosmo
+      light: cosmo #flatly
       dark: darkly
     css: styles.css
     highlight-style: eiffel
