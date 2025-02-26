@@ -1,28 +1,29 @@
 project:
   type: website
   output-dir: docs
-  title: "NLP for Chadian languages | Chad 👋🏿✍🏿🔊🔉🔈📣💭 "
+
+website:
+  title: "NLP for Chadian languages"
   description: "A website dedicated to Natural Language Processing for Chadian languages, exploring various linguistic and computational aspects."
   url: https://abdelazizharane.github.io/nlp-for-chadian-languages/
   baseurl: /nlp-for-chadian-languages
   logo: images/logoblog.png
+  navbar:
     right:
       - index.qmd # Acceuil
-      - about.qmd # A propos
+      - blog.qmd  # les posts
       - modelisation_langue.qmd # Modélisation des langues
       # - corpus.qmd # Corpus
-      - blog.qmd  # les posts
-    social:
-      - icon : website
-        href: https://chadainetwork.org
+      - about.qmd # A propos
       - icon: linkedin
         href: https://linkedin.com/in/abdel-aziz-harane
       - icon: github
         href: https://github.com/abdelazizharane/Corpus-Chadian-Languages
-      - icon: medium
-        href: https://medium.com/@abdelaziz-harane
       - icon: youtube
-        href: https://www.youtube.com/@DataVibes235
+        href: https://www.youtube.com/@chadainetwork
+
+
+
 
 format:
   html:
