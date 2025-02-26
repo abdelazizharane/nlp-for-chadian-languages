@@ -1,0 +1,44 @@
+/* css styles */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pacifico&display=swap');
+
+h1.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar-title {
+  font-size: 1.5em; /* Ajustez la taille du titre du blog selon vos besoins */
+}
+/* Style de la barre de navigation */
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin-left: auto;
+}
+/* Style des liens de la barre de navigation */
+.navbar-link {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+/* Style des liens de la barre de navigation au survol */
+.navbar-link:hover {
+  color: #f1356d;
+}
+/* Style des articles */
+.article {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+/* Style des articles au survol */
+.article:hover {
+  background: #f0f0f0;
+}
