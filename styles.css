@@ -8,7 +8,13 @@ h1.title {
   font-size: 60px;
 }
 
-.navbar {
+
+
+h1, h2, h3, h4{
+  color: ;
+}
+
+.navbar *{
   display: flex;
   align-items: center;
 }
@@ -36,7 +42,7 @@ h1.title {
   margin: 20px 0;
   padding: 10px;
   border-radius: 5px;
-  background: #f9f9f9;
+  background: #f9f;
 }
 /* Style des articles au survol */
 .article:hover {
