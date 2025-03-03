@@ -6,6 +6,4 @@ author: Abdel-aziz Harane
 format: revealjs
 ---
 
-
-
 # Vous allez apprendre à faire le NLP sur les langues du Tchad
