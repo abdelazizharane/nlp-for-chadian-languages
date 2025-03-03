@@ -132,8 +132,8 @@ window.Quarto = {
 <span class="menu-text">Articles 🗃️</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../modelisation_language.html"> 
-<span class="menu-text">Modelisation linguistique</span></a>
+    <a class="nav-link" href="../corpus.html"> 
+<span class="menu-text">Corpus</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/abdel-aziz-harane"> <i class="bi bi-linkedin" role="img">
@@ -228,7 +228,7 @@ window.Quarto = {
 <section id="scraping-avec-r-et-rvest" class="level3">
 <h3 class="anchored" data-anchor-id="scraping-avec-r-et-rvest">1. Scraping avec R et <code>rvest</code></h3>
 <p>Une grande partie des textes disponibles en langues tchadiennes sont dispersés sur des sites non structurés. Le package <strong>rvest</strong> permet d’extraire ces textes efficacement.</p>
-<p>```rjv title=“scraping_shu.r” linenums=“1” library(rvest)</p>
+<p>```ade title=“scraping_shu.r” linenums=“1” library(rvest)</p>
 <p>url &lt;- “https://bible.com/arabe-tchadien” page &lt;- read_html(url)</p>
 <p>textes &lt;- page %&gt;% html_nodes(“p”) %&gt;% html_text()</p>
 <p>writeLines(textes, “bible_arabe_tchadien.txt”)</p>
@@ -282,7 +282,7 @@ for i, page in enumerate(pages):
 <li><strong>Correction des erreurs OCR</strong> avec des dictionnaires de mots.</li>
 <li><strong>Segmentation des phrases et tokenization</strong>.</li>
 </ul>
-<p>```hocqaqwe title=“preprocessing.py” linenums=“1” import re</p>
+<p>```ghmdoktc title=“preprocessing.py” linenums=“1” import re</p>
 <p>def cle title=“preprocessing.py” linenums=“1”an_text(text): text = text.lower() text = re.sub(r”[^a-zA-Z0-9\s]“,”“, text) # Suppression des caractères spéciaux return text text_cleaned = clean_text(”Allâh est mis en forme étrangement !“) print(text_cleaned) # ‘allah est mis en forme etrangement’</p>
 <pre><code>
 Code APE vrai labelisé par le moteur de règles – nace (732 modalités)

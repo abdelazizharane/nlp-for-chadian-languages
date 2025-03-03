@@ -132,8 +132,8 @@ window.Quarto = {
 <span class="menu-text">Articles 🗃️</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../modelisation_language.html"> 
-<span class="menu-text">Modelisation linguistique</span></a>
+    <a class="nav-link" href="../corpus.html"> 
+<span class="menu-text">Corpus</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/abdel-aziz-harane"> <i class="bi bi-linkedin" role="img">
@@ -230,7 +230,7 @@ Note
 <p>Nous allons d’abord expliquer ce qu’est la tokenization, pourquoi elle est importante et comment elle fonctionne, avant de découvrir ensemble les trois méthodes que nous avons utilisées.</p>
 <p>??? info “Qu’est-ce qu’un tokenizer ?” Pour apprendre à un ordinateur à lire et comprendre une phrase, nous devons à priori numériser ces mots (vectorisation) pour qu’il puisse comprendre. Pour la machine, il est impossible de comprendre les mots brutes sans les faire passer par une moulette. C’est-à-dire une machine ne comprend que 1 et 0 et pour elle, une phrase est juste une suite de lettres collées les unes aux autres. Elle a donc besoin d’un outil pour découper la phrase en petits morceaux compréhensibles et numériques. Ce découpage s’appelle la <strong>tokenization</strong> et <strong>l’encodage</strong> lorsque cette phrase est vectorisée comme <code>[129, 103, 192]</code>.</p>
 <p>Par exemple, la phrase :</p>
-<p>```ghzupj title=“une phrase en shu” <strong>“Zahra indaha khalag asfar”</strong> Peut être transformée en :</p>
+<p>```ewczsv title=“une phrase en shu” <strong>“Zahra indaha khalag asfar”</strong> Peut être transformée en :</p>
 <ul>
 <li><code>"Zahra"</code></li>
 <li><code>"indaha"</code></li>
@@ -258,12 +258,12 @@ Ces morceaux sont appelés des **tokens**, et l'ordinateur peut maintenant trava
     - Après BPE : **["#A", "inda", "ha", "#B"]** (où #A et #B sont des unités apprises)</code></pre>
 <section id="sentencepiece" class="level2">
 <h2 class="anchored" data-anchor-id="sentencepiece">Sentencepiece</h2>
-<p>??? info “C’est quoi Sentencepiece ?” Imagineons que nous avons une phrase et voulons la découper, mais nous ne voulons pas seulement couper aux espaces (car certaines langues n’ont pas d’espaces clairs entre les mots comme le Chinois). Sentencepiece apprend à découper la phrase en morceaux de manière plus flexible. <code>ghzupj title="exemple en shu"     - Phrase originale : **"Al-naadum da gaa'id fil-beet"**     - Tokenization avec SentencePiece : **["Al-", "naadum", "da", "gaa'id", "fil-", "beet"]**     - SentencePiece peut aussi découper : **["Al", "na", "adum", "da", "gaa'", "id", "fil", "beet"]** pour plus de flexibilité.</code></p>
+<p>??? info “C’est quoi Sentencepiece ?” Imagineons que nous avons une phrase et voulons la découper, mais nous ne voulons pas seulement couper aux espaces (car certaines langues n’ont pas d’espaces clairs entre les mots comme le Chinois). Sentencepiece apprend à découper la phrase en morceaux de manière plus flexible. <code>ewczsv title="exemple en shu"     - Phrase originale : **"Al-naadum da gaa'id fil-beet"**     - Tokenization avec SentencePiece : **["Al-", "naadum", "da", "gaa'id", "fil-", "beet"]**     - SentencePiece peut aussi découper : **["Al", "na", "adum", "da", "gaa'", "id", "fil", "beet"]** pour plus de flexibilité.</code></p>
 </section>
 <section id="wordpiece" class="level2">
 <h2 class="anchored" data-anchor-id="wordpiece">Wordpiece</h2>
 <p>??? info “C’est quoi WordPiece ?”</p>
-<p>WordPiece est un algorithme qui coupe une phrase en sous-unités, en favorisant les segments les plus fréquemment rencontrés dans les données d’entraînement. Cette approche est utilisée dans des modèles comme BERT. <code>jau title="exemple en shu"     - Phrase originale : **"Zahra indaha khalag asfar"**     - Tokenization avec WordPiece : **["Zah", "##ra", "inda", "##ha", "khal", "##ag", "as", "##far"]**</code></p>
+<p>WordPiece est un algorithme qui coupe une phrase en sous-unités, en favorisant les segments les plus fréquemment rencontrés dans les données d’entraînement. Cette approche est utilisée dans des modèles comme BERT. <code>zll title="exemple en shu"     - Phrase originale : **"Zahra indaha khalag asfar"**     - Tokenization avec WordPiece : **["Zah", "##ra", "inda", "##ha", "khal", "##ag", "as", "##far"]**</code></p>
 <p>Cela permet de garder des unités fréquentes tout en fragmentant les mots moins courants. :::</p>
 <p>Ces trois méthodes nous ont permit de mieux adapter la tokenization en créant notre propre <code>tokenizer</code> sur le vocabulaire de l’arabe tchadienne. Cette approche pourrais être étendue à d’autres langues locales telles que : Sara, Kanembou, Moundang, Zaghawa, … C’est une première expérimentation et nous l’adapterons à nos autres langues locales.</p>
 <p>Esperant qu’il vous a aidé, N’hésitez pas de le partager avec vos pairs.</p>
