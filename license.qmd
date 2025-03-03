@@ -1,0 +1,34 @@
+---
+title: "license"
+format: html
+page-layout: full
+---
+
+# Licence MIT
+
+Droits d'auteur (c) 2025 CHad AI Network
+
+Par la présente, une permission est accordée, gratuitement, à toute personne obtenant une copie de ce logiciel et des fichiers de documentation associés (le "Logiciel"), de commercialiser le Logiciel sans restriction, y compris sans limitation les droits d'utiliser, de copier, de modifier, de fusionner, de publier, de distribuer, de sous-licencier et/ou de vendre des copies du Logiciel, et de permettre aux personnes auxquelles le Logiciel est fourni de le faire, sous réserve des conditions suivantes:
+
+Les avis de droits d'auteur ci-dessus et cet avis de permission doivent être inclus dans toutes les copies ou portions substantielles du Logiciel.
+
+LE LOGICIEL EST FOURNI "EN L'ÉTAT", SANS GARANTIE D'AUCUNE SORTE, EXPLICITE OU IMPLICITE, Y COMPRIS MAIS SANS S'Y LIMITER AUX GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON. EN AUCUN CAS, LES AUTEURS OU LES TITULAIRES DU DROIT D'AUTEUR NE SERONT RESPONSABLES DE TOUTE RÉCLAMATION, DOMMAGES OU AUTRE RESPONSABILITÉ, QU'IL S'AGISSE D'UNE ACTION CONTRACTUELLE, DÉLICTUELLE OU AUTRE, DÉCOULANT DE, DEHORS OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES AFFAIRES DANS LE LOGICIEL.
+
+## Directives de contribution
+
+Nous accueillons les contributions de la communauté. En contribuant à ce projet, vous acceptez de respecter les directives suivantes :
+
+1.  **Code de conduite** : Veuillez lire et respecter notre [Code de Conduite](CODE_OF_CONDUCT.md).
+2.  **Pull Requests** : Soumettez des pull requests pour les modifications. Assurez-vous que votre code passe tous les tests et respecte les normes de codage du projet.
+3.  **Issues** : Signalez les problèmes en utilisant le traqueur de problèmes GitHub. Fournissez des informations détaillées pour nous aider à comprendre et à résoudre le problème.
+4.  **Documentation** : Mettez à jour la documentation si nécessaire pour refléter les modifications apportées à la base de code.
+
+## Utilisation du logiciel
+
+En utilisant ce logiciel, vous acceptez les termes suivants :
+
+1.  **Attribution** : Si vous utilisez ce logiciel dans un projet, veuillez donner crédit à "CHad AI Network".
+2.  **Modifications** : Si vous modifiez le logiciel, indiquez les modifications apportées et ne déformez pas l'origine du logiciel.
+3.  **Conformité** : Assurez-vous que votre utilisation du logiciel est conforme à toutes les lois et réglementations applicables.
+
+Si vous avez des questions ou avez besoin d'aide supplémentaire, veuillez nous contacter à [email Chad AI Network](mailto:contact@chadainetwork.org).

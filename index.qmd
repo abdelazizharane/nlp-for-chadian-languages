@@ -1,5 +1,5 @@
 ---
-title: "Acceuil 🏠"
+title: "🏠 Acceuil"
 page-layout: full
 ---
 
@@ -9,14 +9,18 @@ Toute la documentation des données est disponible sur le repository [Corpus cha
 
 ## Projet NLP pour les Langues Tchadiennes
 
-Le Tchad est un pays avec une large diversité linguistique et culturelle et compte plus de 123 langues autochtones selon [le site Ethnologue](https://www.ethnologue.com/country/TD/).
-
-Nous avons entre autre :
+Vous allez apprendre à travers ces slides sur [les langues du Tchad](langues_tchadiennes.qmd)
 
 ::: {style="display: flex; align-items: center;"}
 <img src="images/chadian_diversity.png" width="150" style="margin-right: 20px;"/>
 
-**`Bagirmi, Buduma, Dajo, Dazaga, Ngambaye, Gidar, Gor, Gulay, Hadjaraï, Kanembou, Kera, Kotoko, Maba, Marba, Massa, Masalit, Mbaï, Misirié, Moubi, Moundang, Mousey, Sara, Teda, Toupouri, Waddaï et Zaghawa`.**
+Le Tchad est un pays avec une large diversité linguistique et culturelle et compte 126 langues autochtones selon [le site Ethnologue](https://www.ethnologue.com/country/TD/).
+:::
+
+::: {.callout-tip icon="false"}
+## Langues tchadiennes
+
+Adamawa Fulfulde \[fub\], Amdang \[amj\], Assangori \[sjg\], Bagirmi \[bmi\], Bagirmi Fulfulde \[fui\], Barein \[bva\], Bedjond \[bjv\], Berakou \[bxv\], Besme \[bes\], Bidiyo \[bid\], Birgit \[btf\], Bolgo \[bvo\], Bon Gula \[glc\], Boor \[bvf\], Bua \[bub\], Buduma \[bdm\], Buso \[bso\], Chadian Arabic \[shu\], Chadian Sign Language \[cds\], Dangaléat \[daa\], Dar Daju Daju \[djc\], Dar Sila Daju \[dau\], Day \[dai\], Dazaga \[dzg\], Disa \[dsi\], Fania \[fni\], Fongoro \[fgr\], Fur \[fvr\], Gabri \[gab\], Gadang \[gdk\], Gidar \[gid\], Gor \[gqr\], Goundo \[goy\], Gula \[glu\], Gula Iro \[glj\], Gulay \[gvl\], Herdé \[hed\], Horo \[hor\], Jaya \[jyy\], Jonkor Bourmataguil \[jeu\], Kaba \[ksp\], Kabalai \[kvf\], Kajakse \[ckq\], Kanembu \[kbl\], Karang \[kzr\], Karanga \[kth\], Kendeje \[klf\], Kenga \[kyq\], Kera \[ker\], Kibet \[kie\], Kim \[kia\], Kimré \[kqp\], Koke \[kou\], Kujarge \[vkj\], Kulfa \[kxj\], Kuo \[xuo\], Kwang \[kvi\], Laal \[gdm\], Lagwan \[kot\], Laka \[lap\], Lele \[lln\], Luto \[ndy\], Maba \[mde\], Mabire \[muj\], Majera \[xmj\], Malgbe \[mxf\], Mambai \[mcs\], Mango \[mge\], Mararit \[mgb\], Marba \[mpg\], Marfa \[mvu\], Masalit \[mls\], Masana \[mcn\], Maslam \[msv\], Masmaje \[mes\], Massalat \[mdg\], Mawa \[mcw\], Mbara \[mpk\], Mbay \[myb\], Mesme \[zim\], Migaama \[mmy\], Miltu \[mlj\], Mogum \[mou\], Morom \[bdo\], Mpade \[mpi\], Mser \[kqx\], Mubi \[mub\], Mukulu \[moz\], Mulgi \[mvh\], Mundang \[mua\], Musey \[mse\], Musgu \[mug\], Muskum \[mje\], Naba \[mne\], Nancere \[nnc\], Ndam \[ndm\], Ngam \[nmc\], Ngambay \[sba\], Ngete \[nnn\], Niellim \[nie\], Noy \[noy\], Nzakambay \[nzy\], Pana \[pnz\], Pévé \[lme\], Runga \[rou\], Saba \[saa\], Sar \[mwm\], Sara Kaba Démé \[kwg\], Sara Kaba Naa \[kwv\], Sarua \[swy\], Sinyar \[sys\], Sokoro \[sok\], Soumraye \[sor\], Surbakhal \[sbj\], Tama \[tma\], Tamki \[tax\], Tedaga \[tuq\], Tobanga \[tng\], Toram \[trj\], Tumak \[tmc\], Tunia \[tug\], Tupuri \[tui\], Ubi \[ubi\], Yerwa Kanuri \[knc\], Zaghawa \[zag\], Zan Gula \[zna\]
 :::
 
 **Toutes ces langues tchadiennes sont absentes du monde numérique**. Imaginez que l'un de vous veut parler uniquement Zaghawa ou Toupouri, essayant d’interagir avec un chatbot en ligne. Aujourd’hui, **vous n'avez aucune option**. Nous voulons changer cela.
@@ -27,10 +31,14 @@ Notre projet ambitionne de **développer des modèles de traitement du langage n
 
 En commençant par l’arabe tchadien, nous construirons progressivement des modèles pour d’autres langues locales. Mais nous ne nous arrêtons pas là : à long terme, nous souhaitons aller **bien au-delà du texte**.
 
+::: callout-important
+## Pourquoi est-ce important
+:::
+
 ??? info "Pourquoi ce projet est-il crucial ?"
 
 ```         
-`Scénario imaginaire` :
+`Anecdote` :
 
 > « Mon petit-fils est allé à l'école et a appris à utiliser un ordinateur. Mais quand je lui ai demandé de me montrer comment discuter avec ces machines, il m'a dit que tout était en français ou en anglais. Alors j’ai ri et répondu : *Donc l'ordinateur ne parle pas ma langue ?* »
 
@@ -70,14 +78,14 @@ Aujourd’hui, **nous manquons de données audio** pour les langues tchadiennes.
 
 Nous voulons enregistrer et annoter **des heures de conversations**, d’histoires traditionnelles et de discours pour construire ces modèles.
 
-??? example "Une anecdote"
+::: callout-tip
+## Anecdote
 
-```         
 Un jour, nous avons demandé à une grand-mère tchadienne ce qu’elle aimerait voir dans une IA.
 
 > Elle nous a répondu : *Un ordinateur qui me parle comme mes enfants !*
 
 Ce simple souhait résume tout l’enjeu de ce projet : **rendre la technologie accessible et humaine, en respectant nos langues et nos cultures**.
-```
+:::
 
 Nous ne devons pas rester passifs et éternels consommateurs.**Pour cela nous aimerions rendre les outils d'IA universels et inclusifs, d'où la vitalité pour nous d'inclure nos voix et nos cultures dans cette technologie**.
