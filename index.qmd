@@ -3,7 +3,7 @@ title: "🏠 Acceuil"
 page-layout: full
 ---
 
-**Bienvenue - Welcome - مرحبا - dans la documentation NLP des langue thcadiennes**
+**Bienvenue - Welcome - مرحبا - dans la documentation NLP des langue tchadiennes**
 
 Toute la documentation des données est disponible sur le repository [Corpus chadian languages](https://github.com/abdelazizharane/Corpus-Chadian-Languages/).
 
@@ -25,11 +25,11 @@ Le Tchad est un pays avec une large diversité linguistique et culturelle et com
 Adamawa Fulfulde \[fub\], Amdang \[amj\], Assangori \[sjg\], Bagirmi \[bmi\], Bagirmi Fulfulde \[fui\], Barein \[bva\], Bedjond \[bjv\], Berakou \[bxv\], Besme \[bes\], Bidiyo \[bid\], Birgit \[btf\], Bolgo \[bvo\], Bon Gula \[glc\], Boor \[bvf\], Bua \[bub\], Buduma \[bdm\], Buso \[bso\], Chadian Arabic \[shu\], Chadian Sign Language \[cds\], Dangaléat \[daa\], Dar Daju Daju \[djc\], Dar Sila Daju \[dau\], Day \[dai\], Dazaga \[dzg\], Disa \[dsi\], Fania \[fni\], Fongoro \[fgr\], Fur \[fvr\], Gabri \[gab\], Gadang \[gdk\], Gidar \[gid\], Gor \[gqr\], Goundo \[goy\], Gula \[glu\], Gula Iro \[glj\], Gulay \[gvl\], Herdé \[hed\], Horo \[hor\], Jaya \[jyy\], Jonkor Bourmataguil \[jeu\], Kaba \[ksp\], Kabalai \[kvf\], Kajakse \[ckq\], Kanembu \[kbl\], Karang \[kzr\], Karanga \[kth\], Kendeje \[klf\], Kenga \[kyq\], Kera \[ker\], Kibet \[kie\], Kim \[kia\], Kimré \[kqp\], Koke \[kou\], Kujarge \[vkj\], Kulfa \[kxj\], Kuo \[xuo\], Kwang \[kvi\], Laal \[gdm\], Lagwan \[kot\], Laka \[lap\], Lele \[lln\], Luto \[ndy\], Maba \[mde\], Mabire \[muj\], Majera \[xmj\], Malgbe \[mxf\], Mambai \[mcs\], Mango \[mge\], Mararit \[mgb\], Marba \[mpg\], Marfa \[mvu\], Masalit \[mls\], Masana \[mcn\], Maslam \[msv\], Masmaje \[mes\], Massalat \[mdg\], Mawa \[mcw\], Mbara \[mpk\], Mbay \[myb\], Mesme \[zim\], Migaama \[mmy\], Miltu \[mlj\], Mogum \[mou\], Morom \[bdo\], Mpade \[mpi\], Mser \[kqx\], Mubi \[mub\], Mukulu \[moz\], Mulgi \[mvh\], Mundang \[mua\], Musey \[mse\], Musgu \[mug\], Muskum \[mje\], Naba \[mne\], Nancere \[nnc\], Ndam \[ndm\], Ngam \[nmc\], Ngambay \[sba\], Ngete \[nnn\], Niellim \[nie\], Noy \[noy\], Nzakambay \[nzy\], Pana \[pnz\], Pévé \[lme\], Runga \[rou\], Saba \[saa\], Sar \[mwm\], Sara Kaba Démé \[kwg\], Sara Kaba Naa \[kwv\], Sarua \[swy\], Sinyar \[sys\], Sokoro \[sok\], Soumraye \[sor\], Surbakhal \[sbj\], Tama \[tma\], Tamki \[tax\], Tedaga \[tuq\], Tobanga \[tng\], Toram \[trj\], Tumak \[tmc\], Tunia \[tug\], Tupuri \[tui\], Ubi \[ubi\], Yerwa Kanuri \[knc\], Zaghawa \[zag\], Zan Gula \[zna\]
 :::
 
-**Toutes ces langues tchadiennes sont absentes du monde numérique**. Imaginez que l'un de vous veut parler uniquement Zaghawa ou Toupouri, essayant d’interagir avec un chatbot en ligne. Aujourd’hui, **vous n'avez aucune option**. Nous voulons changer cela.
+Toutes ces langues tchadiennes sont aujourd’hui invisibles dans l’univers numérique. Imaginez un instant qu’une personne souhaitant interagir en Zaghawa ou en Toupuri tente de converser avec un chatbot en ligne. À ce jour, une telle possibilité n’existe pas. Cette absence prive des millions de locuteurs d’un accès aux outils technologiques et freine l’inclusion linguistique dans l’intelligence artificielle (IA). **Ce projet entend changer cette réalité.**
 
-Notre projet ambitionne de **développer des modèles de traitement du langage naturel (TALN ou NLP - Natural Language Processing) capables de comprendre et de répondre en langues tchadiennes**.
+L’ambition est de concevoir des modèles avancés de traitement automatique du langage naturel (TALN/NLP – Natural Language Processing) capables de comprendre, générer et interagir en langues tchadiennes. En dotant ces langues de représentations numériques robustes, il devient possible de réduire la fracture technologique et de valoriser un patrimoine linguistique inestimable.
 
-En commençant par l’arabe tchadien, nous construirons progressivement des modèles pour d’autres langues locales. Mais nous ne nous arrêtons pas là : à long terme, nous souhaitons aller **bien au-delà du texte**.
+Le développement de [**Kalam-Na**]{.smallcaps} commence avec l’arabe tchadien (*shu*), avant d’être progressivement étendu à d’autres langues locales. Mais l’initiative ne s’arrête pas là. L’objectif à long terme est d’explorer des solutions multimodales (*LLM*) intégrant la reconnaissance vocale, la traduction automatique et d’autres applications de l’intelligence artificielle, afin d’offrir des outils véritablement adaptés aux besoins des communautés.
 
 ::: callout-important
 ## Pourquoi est-ce important
@@ -41,8 +41,6 @@ En commençant par l’arabe tchadien, nous construirons progressivement des mod
 Ce projet est non seulement une réponse à cette réalité mais nous voulons donner une voix numérique aux langues tchadiennes et permettre à tous d’interagir avec la technologie sans barrière linguistique.
 :::
 
-Aujourd’hui, **nous manquons de données audio** (*voir la section* [à propos](about.qmd)) pour les langues tchadiennes.
+Aujourd’hui, les langues tchadiennes souffrent d’un manque criant de données audio exploitables (*voir la section* [à propos](about.qmd)). Dans la phase de collecte des données audio et textuelles, ce projet vise à enregistrer et à annoter des heures de conversations – *au moins 10 heures par langue* – en capturant des histoires et poèmes traditionnels et des discours. Ces données serviront à développer des modèles avancés de synthèse vocale (*Text-To-Speech*, TTS) et de reconnaissance automatique de la parole (*Automatic Speech Recognition*, ASR).
 
-Nous voulons enregistrer et annoter **des heures de conversations** (*au moins 10h par langue*), d’histoires traditionnelles et de discours pour construire des modèles de synthèse vocale (TTS - Text-To-Speech) et de reconnaissance vocale (ASR - Automatic Speech Recognition).
-
-Nous ne devons pas rester passifs et éternels consommateurs. **Pour cela nous aimerions rendre les outils d'IA universels et inclusifs, d'où la vitalité pour nous d'inclure nos voix et nos cultures dans cette technologie**.
+Il est essentiel de ne plus se limiter au rôle de simples consommateurs des technologies d'IA. **Rendre ces outils universels et inclusifs passe par l’intégration de nos langues, de nos voix et de notre patrimoine culturel dans l’écosystème numérique mondial**.

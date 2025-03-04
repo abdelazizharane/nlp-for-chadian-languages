@@ -5,6 +5,6 @@ page-layout: full
 
 ## Les corpus des langues tchadiennes
 
-Nous regroupons et mettons à votre disposition tous les corpus sur diverses langues locales dans le but que vous puissiez les utilisez dans le respect de la licence dédiée. 
+Cette section regroupe et met à disposition des corpus de diverses langues locales, permettant leur exploitation dans le respect des licences dédiées.
 
-**_Nous mettons à jour cette section au fur et à mesure_**.
+*L’enrichissement de ces ressources est un processus continu :* cette section sera régulièrement mise à jour afin d’offrir un accès toujours plus étendu aux données linguistiques.

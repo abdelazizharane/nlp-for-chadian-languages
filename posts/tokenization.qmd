@@ -5,81 +5,88 @@ date: "2024-02-20"
 categories: [Tokenization, Preprocessing]
 ---
 
-Dans ce guide, je partage avec vous les approches qu'on a adopté dans la créatio d'un _tokenizer_ pour la langue `arabe tchadien (shu)` qui est appliquable à nos autres langues locales. Nous discuterons de la littérature, des algorithmes existants et je vous expliquerais comment j'ai implémenter le nôtre.
+Dans ce guide, je partage avec vous les approches que nous avons adoptées pour concevoir un tokenizer adapté à `l’arabe tchadien (Shu)`, une méthodologie également applicable à d’autres langues locales. Nous explorerons ensemble la littérature existante, les principaux algorithmes de tokenization et je vous expliquerai en détail le processus d’implémentation de notre propre modèle.
 
-::: {.callout-note}
-Il est nécessaire de créer un nouveau tokenizer pour pouvoir entrainer à partir de zéro ou affiner un modèle pré entrainé. 
+::: callout-note
+La création d’un `tokenizer` est une étape essentielle lorsqu’on souhaite entraîner un modèle à partir de zéro ou affiner (*fine-tuning*) un modèle pré-entraîné.
 :::
 
-Dans le cadre de ce projet, nous avons appliqué **trois principaux algorithmes** de tokenization.
-Chacun présente des avantages et des inconvénients, nous permettant d'explorer et de mieux comprendre le fonctionnement de la tokenization, notamment pour la langue arabe tchadienne (shu).
+En effet, les tokenizers génériques ne prennent pas en compte les spécificités linguistiques et morphologiques de nos langues, ce qui rend nécessaire le développement d'un nouveau tokenizer. Sans cette adaptation, les modèles existants peinent à capturer les spécificités linguistiques et morphologiques des langues locales.
 
-<!-- more -->
+Dans le cadre de ce projet, **nous avons appliqué trois algorithmes de tokenization distincts**, chacun présentant ses avantages et ses limites. Cette démarche nous a permis d’explorer en profondeur le fonctionnement de la tokenization et d’analyser son impact sur l’arabe tchadien (*Shu*).
 
-Nous allons d'abord expliquer ce qu'est la tokenization, pourquoi elle est importante et comment elle fonctionne, avant de découvrir ensemble les trois méthodes que nous avons utilisées.
+Nous débutons par une présentation de la tokenization : sa définition, son importance et son mode de fonctionnement. Ensuite, nous passerons en revue les trois méthodes que nous avons expérimentées, afin d’en comprendre les spécificités et d’évaluer leur pertinence pour notre projet.
 
-??? info "Qu'est-ce qu'un tokenizer ?"
-    Pour apprendre à un ordinateur à lire et comprendre une phrase, nous devons à priori numériser ces mots (vectorisation) pour qu'il puisse comprendre. Pour la machine, il est impossible de comprendre les mots brutes sans les faire passer par une moulette. C'est-à-dire une machine ne comprend que 1 et 0 et pour elle, une phrase est juste une suite de lettres collées les unes aux autres. Elle a donc besoin d'un outil pour découper la phrase en petits morceaux compréhensibles et numériques. Ce découpage s'appelle la **tokenization** et **l'encodage** lorsque cette phrase est vectorisée comme `[129, 103, 192]`.
+*Sans plus tarder, commençons. On file !*
+
+> **Qu'est-ce qu'un tokenizer ?**
+
+Pour qu’un ordinateur puisse lire et comprendre une phrase, il est d’abord nécessaire de la transformer en une représentation numérique, un processus appelé *vectorisation* (rendre les mots en vecteur numérique). En effet, une machine ne comprend pas les mots sous leur forme brute. Pour elle, une phrase n’est qu’une succession de caractères sans signification intrinsèque. Or, les ordinateurs ne traitent que des suites de 0 et de 1.
+
+C’est ici qu’intervient la ***tokenization*** : un mécanisme qui permet de découper une phrase en unités plus petites – appelées ***tokens*** – afin de les rendre compréhensibles pour un modèle d’intelligence artificielle (IA). Une fois ce découpage effectué, chaque token est ensuite converti en une valeur numérique, une étape connue sous le nom d’***encodage***.
+
+Ainsi, une phrase est représentée sous forme de vecteurs, comme par exemple : **`[129, 103, 192]`** .
 
 Par exemple, la phrase :
 
-```{text} title="une phrase en shu"
-**"Zahra indaha khalag asfar"**
-Peut être transformée en :
+```{text}
+"Zahra indaha khalag asfar" Peut être transformée en :
 
-- `"Zahra"`
-- `"indaha"`
-- `"khalag"`
-- `"asfar"`
+"Zahra"
+"indaha"
+"khalag"
+"asfar"
 ```
 
 Ces morceaux sont appelés des **tokens**, et l'ordinateur peut maintenant travailler avec eux plus facilement.
 
-!!! note "Les langues tchadiennes et la tokenization"
-
-      Les langues tchadiennes, comme l'arabe tchadien et le ngambaye, présentent des défis uniques en tokenization. L'arabe tchadien, par exemple, utilise une écriture attachée et des mots qui peuvent être très longs lorsqu'ils contiennent des préfixes et suffixes. Il est donc essentiel de tester plusieurs algorithmes et si besoin d'en créer un autre (ce que nous allons faire).
-
 ### **Les 3 algorithmes les plus utilisés 👇🏿**
 
 ::: panel-tabset
-## BPE (Byte Pair Encoding)
+## Byte Pair Encoding (BPE)
 
-??? info "C'est quoi BPE ?"
-    Lors qu'on veut apprendre à écrire un texte en utilisant le moins de place possible ou plutôt que de stocker chaque mot individuellement, nous pouvons donc repérer les lettres ou les groupes de lettres les plus fréquents et les remplacer par un symbole plus court.
+> ***C'est quoi BPE ?***
 
-```{text} title="exemple en shu"
-    - Phrase originale : **"Zahra indaha khalag asfar"**
-    - Découpage en tokens : **["Za", "hra", "inda", "ha", "kha", "lag", "as", "far"]**
-    - Après BPE : **["#A", "inda", "ha", "#B"]** (où #A et #B sont des unités apprises)
+> Lors qu'on veut apprendre à écrire un texte en utilisant le moins de place possible ou plutôt que de stocker chaque mot individuellement, nous pouvons donc repérer les lettres ou les groupes de lettres les plus fréquents et les remplacer par un symbole plus court.
+
+```{text}
+- Phrase originale : Zahra indaha khalag asfar
+- Découpage en tokens : ["Za", "hra", "inda", "ha", "kha", "lag", "as", "far"]
+- Après BPE : ["#A", "inda", "ha", "#B"] (où #A et #B sont des unités apprises)
 ```
 
 ## Sentencepiece
 
-??? info "C'est quoi Sentencepiece ?"
-Imagineons que nous avons une phrase et voulons la découper, mais nous ne voulons pas seulement couper aux espaces (car certaines langues n'ont pas d'espaces clairs entre les mots comme le Chinois). Sentencepiece apprend à découper la phrase en morceaux de manière plus flexible.
-```{text} title="exemple en shu"
-    - Phrase originale : **"Al-naadum da gaa'id fil-beet"**
-    - Tokenization avec SentencePiece : **["Al-", "naadum", "da", "gaa'id", "fil-", "beet"]**
-    - SentencePiece peut aussi découper : **["Al", "na", "adum", "da", "gaa'", "id", "fil", "beet"]** pour plus de flexibilité.
+> ***C'est quoi Sentencepiece ?***
+
+Imagineons que nous avons une phrase et voulons la découper, mais nous ne voulons pas seulement couper aux espaces (car certaines langues n'ont pas d'espaces clairs entre les mots comme le Chinois). *Sentencepiece* apprend à découper la phrase en morceaux de manière plus flexible.
+
+```{text}
+- Phrase originale : Al-naadum da gaa'id fil-beet
+- Tokenization avec SentencePiece : [Al-", "naadum", "da", "gaa'id", "fil-", "beet]
+- SentencePiece peut aussi découper : ["Al", "na", "adum", "da", "gaa'", "id", "fil", "beet"] pour plus de flexibilité.
 ```
 
-## Wordpiece
+## WordPiece
 
-??? info "C'est quoi WordPiece ?"
+> ***C'est quoi WordPiece ?***
 
-WordPiece est un algorithme qui coupe une phrase en sous-unités, en favorisant les segments les plus fréquemment rencontrés dans les données d'entraînement. Cette approche est utilisée dans des modèles comme BERT.
-```{r} title="exemple en shu"
-    - Phrase originale : **"Zahra indaha khalag asfar"**
-    - Tokenization avec WordPiece : **["Zah", "##ra", "inda", "##ha", "khal", "##ag", "as", "##far"]**
+WordPiece est une méthode de tokenization qui segmente une phrase en sous-unités en privilégiant les séquences les plus fréquemment rencontrées dans les données d'entraînement. Elle est notamment utilisée dans des modèles comme *BERT* et GPT.
+
+```{text}
+- Phrase originale : **"Zahra indaha khalag asfar"**
+- Tokenization avec WordPiece : **["Zah", "##ra", "inda", "##ha", "khal", "##ag", "as", "##far"]**
 ```
-
-Cela permet de garder des unités fréquentes tout en fragmentant les mots moins courants.
 :::
 
+> Les langues tchadiennes et la tokenization
 
+Les langues tchadiennes, comme le Toupouri, Mundang et le Sara, présentent des défis en tokenization. L'arabe tchadien, par exemple, utilise une écriture attachée et des mots qui peuvent être très longs lorsqu'ils contiennent des préfixes et suffixes. Il est donc essentiel de tester plusieurs algorithmes et si besoin d'en créer un autre (ce que nous avons fait pour l'arabe tchadien et Sara).
 
-Ces trois méthodes nous ont permit de mieux adapter la tokenization en créant notre propre `tokenizer` sur le vocabulaire de l'arabe tchadienne.
-Cette approche pourrais être étendue à d'autres langues locales telles que : Sara, Kanembou, Moundang, Zaghawa, ... C'est une première expérimentation et nous l'adapterons à nos autres langues locales.
+Cela permet de garder des unités fréquentes tout en fragmentant les mots moins courants.
 
+Ces trois méthodes nous ont permit de mieux adapter la tokenization en créant notre propre `tokenizer` sur le vocabulaire de `shu`. Cette approche pourrais être étendue à d'autres langues locales telles que : Sara, Kanembou, Mundang, Zaghawa, ... C'est une première expérimentation et nous l'adapterons à nos autres langues locales.
 
-Esperant qu'il vous a aidé, N'hésitez pas de le partager avec vos pairs.
+Pour garantir une meilleure prise en charge, il est essentiel de tester plusieurs algorithmes et, si nécessaire, d’en développer un nouveau. Cette première expérimentation sera progressivement affinée et adaptée à d’autres langues tchadiennes.
+
+Si ce guide vous a été utile, n’hésitez pas à le partager avec vos pairs ! 🚀
