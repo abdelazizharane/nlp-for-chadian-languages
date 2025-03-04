@@ -23,13 +23,12 @@ J'espère qu'il vous sera utile. Il y a beaucoup de choses à discuter ici du c�
 
 Une grande partie des textes disponibles en langues tchadiennes sont dispersés sur des sites non structurés. Le package **rvest** permet d’extraire ces textes efficacement.
 
-```{r}
-library(rvest)
+```{text}
+library("rvest")
 url <- "https://bible.com/arabe-tchadien"
 page <- read_html(url)
 textes <- page %>% html_nodes("p") %>% html_text()
 writeLines(textes, "bible_arabe_tchadien.txt") 
-
 ```
 
 #### Défis rencontrés :
@@ -52,7 +51,7 @@ Les PDF contenant des documents en langues tchadiennes sont souvent **anciens et
 -   Perte d’information due à des polices de caractères non standardisées
 -   Disposition des colonnes non uniforme, ce qui fausse l’extraction
 
-```{python}
+```{text}
 #install.packages("reticulate")
 retic
 import pytesseract
@@ -82,7 +81,7 @@ Une fois les données extraites, elles nécessitent un prétraitement rigoureux 
 -   **Correction des erreurs OCR** avec des dictionnaires de mots.
 -   **Segmentation des phrases et tokenization**.
 
-```{python}
+```{text}
 import re  #bibliothèque des expressions régulières
 
 def clean_text(text):
@@ -124,7 +123,7 @@ Certains mots en langues tchadiennes sont **concaténés** et difficiles à segm
 
 -   Certaines langues utilisent **des déclinaisons riches**, rendant la tokenization plus complexe.
 
-**Solutions possibles :**
+**Vous devez envisager à:**
 
 -   Développer un tokenizer spécifique en utilisant un **modèle statistique basé sur les fréquences des mots**.
 -   Entraîner un **modèle de segmentation de mots** en deep learning pour affiner la tokenization.
