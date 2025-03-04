@@ -74,7 +74,7 @@ Imagineons que nous avons une phrase et voulons la découper, mais nous ne voulo
 WordPiece est une méthode de tokenization qui segmente une phrase en sous-unités en privilégiant les séquences les plus fréquemment rencontrées dans les données d'entraînement. Elle est notamment utilisée dans des modèles comme *BERT* et GPT.
 
 ```{text}
-- Phrase originale : **"Zahra indaha khalag asfar"**
+- Phrase originale : "Zahra indaha khalag asfar"
 - Tokenization avec WordPiece : **["Zah", "##ra", "inda", "##ha", "khal", "##ag", "as", "##far"]**
 ```
 :::
