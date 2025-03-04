@@ -89,4 +89,4 @@ Ces trois méthodes nous ont permit de mieux adapter la tokenization en créant 
 
 Pour garantir une meilleure prise en charge, il est essentiel de tester plusieurs algorithmes et, si nécessaire, d’en développer un nouveau. Cette première expérimentation sera progressivement affinée et adaptée à d’autres langues tchadiennes.
 
-Si ce guide vous a été utile, n’hésitez pas à le partager avec vos pairs ! 🚀
+Si ce guide vous a été utile, n’hésitez pas à le partager avec vos pairs !

@@ -132,8 +132,8 @@ window.Quarto = {
 <span class="menu-text">Articles 🗃️</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../modelisation_language.html"> 
-<span class="menu-text">Modelisation linguistique</span></a>
+    <a class="nav-link" href="../corpus.html"> 
+<span class="menu-text">Corpus</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/abdel-aziz-harane"> <i class="bi bi-linkedin" role="img">
@@ -200,7 +200,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#scraping-avec-r-et-rvest" id="toc-scraping-avec-r-et-rvest" class="nav-link active" data-scroll-target="#scraping-avec-r-et-rvest">1. Scraping avec R et <code>rvest</code></a></li>
+  <li><a href="#extraction-de-textes-depuis-des-pdf" id="toc-extraction-de-textes-depuis-des-pdf" class="nav-link" data-scroll-target="#extraction-de-textes-depuis-des-pdf">2. Extraction de textes depuis des PDF</a></li>
   <li><a href="#nettoyage-et-prétraitement-des-données" id="toc-nettoyage-et-prétraitement-des-données" class="nav-link" data-scroll-target="#nettoyage-et-prétraitement-des-données">3. Nettoyage et prétraitement des données</a></li>
+  <li><a href="#structuration-et-tokenization-des-données" id="toc-structuration-et-tokenization-des-données" class="nav-link" data-scroll-target="#structuration-et-tokenization-des-données">4. Structuration et tokenization des données</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +215,6 @@ window.Quarto = {
 
 <p>Collecte et traitement des données pour <em>SHU</em> avec <code>R</code> et <code>Python</code></p>
 <p>Dans un projet NLP, la phase la plus complexe est la collecte et le traitement des données. Pour ce projet, c’est un défi majeur (qui m’a pris 4 mois), notamment en raison du manque de ressources structurées et de la diversité des formats de données. Dans cet article, nous allons aborder <strong>les différentes étapes et défis liés à l’extraction, la transformation et la structuration des données linguistiques</strong> obtenues à partir de sources variées (textes religieux, vocabulaires, grammaires) en utilisant <strong>R</strong> et <strong>Python</strong>.</p>
-<!-- more -->
 <p>J’espère qu’il vous sera utile. Il y a beaucoup de choses à discuter ici du côté pratique de cette collecte, mais j’essaierai d’être plus précis en vous fournissant que les informations nécessaires.</p>
 <section id="les-points-abordés-dans-cet-article" class="level4">
 <h4 class="anchored" data-anchor-id="les-points-abordés-dans-cet-article">Les points abordés dans cet article :</h4>
@@ -228,41 +229,46 @@ window.Quarto = {
 <section id="scraping-avec-r-et-rvest" class="level3">
 <h3 class="anchored" data-anchor-id="scraping-avec-r-et-rvest">1. Scraping avec R et <code>rvest</code></h3>
 <p>Une grande partie des textes disponibles en langues tchadiennes sont dispersés sur des sites non structurés. Le package <strong>rvest</strong> permet d’extraire ces textes efficacement.</p>
-<p>```eny title=“scraping_shu.r” linenums=“1” library(rvest)</p>
-<p>url &lt;- “https://bible.com/arabe-tchadien” page &lt;- read_html(url)</p>
-<p>textes &lt;- page %&gt;% html_nodes(“p”) %&gt;% html_text()</p>
-<p>writeLines(textes, “bible_arabe_tchadien.txt”)</p>
-<pre><code>
-#### Défis rencontrés :
-
-- Certains sites affichent du texte en JavaScript, ce qui rend l’extraction plus complexe.
-- Les chapitres et versets sont parfois imbriqués dans des balises non standardisées.
-
-**Solutions possibles :**
-
-- Utilisation de Selenium pour exécuter le JavaScript avant d’extraire les données.
-- Extraction et nettoyage des balises avec des expressions régulières.
-
-### 2. Extraction de textes depuis des PDF
-
-Les PDF contenant des documents en langues tchadiennes sont souvent **anciens et mal structurés**. Même les outils OCR comme `tesseract` rencontrent des difficultés.
-
-#### Problèmes observés :
-
-- Mauvaise segmentation des caractères (ex : "b'Allah" devient "b Allah").
-- Perte d’information due à des polices de caractères non standardisées.
-- Disposition des colonnes non uniforme, ce qui fausse l’extraction.
-
-```{python} title="ocr_extractionPDF.py" linenums="1"
+<pre class="{text}"><code>library("rvest")
+url &lt;- "https://bible.com/arabe-tchadien"
+page &lt;- read_html(url)
+textes &lt;- page %&gt;% html_nodes("p") %&gt;% html_text()
+writeLines(textes, "bible_arabe_tchadien.txt") </code></pre>
+<section id="défis-rencontrés" class="level4">
+<h4 class="anchored" data-anchor-id="défis-rencontrés">Défis rencontrés :</h4>
+<ul>
+<li>Certains sites affichent du texte en JavaScript, ce qui rend l’extraction plus complexe.</li>
+<li>Les chapitres et versets sont parfois imbriqués dans des balises non standardisées.</li>
+</ul>
+<p><strong>Solutions possibles :</strong></p>
+<ul>
+<li>Utilisation de Selenium pour exécuter le JavaScript avant d’extraire les données.</li>
+<li>Extraction et nettoyage des balises avec des expressions régulières.</li>
+</ul>
+</section>
+</section>
+<section id="extraction-de-textes-depuis-des-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="extraction-de-textes-depuis-des-pdf">2. Extraction de textes depuis des PDF</h3>
+<p>Les PDF contenant des documents en langues tchadiennes sont souvent <strong>anciens et mal structurés</strong>. Même les outils OCR comme <code>tesseract</code> rencontrent des difficultés.</p>
+<section id="problèmes-observés" class="level4">
+<h4 class="anchored" data-anchor-id="problèmes-observés">Problèmes observés :</h4>
+<ul>
+<li>Mauvaise segmentation des caractères (ex : “hi-fatad yeen” devient “hifatad yeen”).</li>
+<li>Perte d’information due à des polices de caractères non standardisées</li>
+<li>Disposition des colonnes non uniforme, ce qui fausse l’extraction</li>
+</ul>
+<pre class="{text}"><code>#install.packages("reticulate")
+retic
 import pytesseract
 from pdf2image import convert_from_path
 
-pages = convert_from_path("document.pdf")
+pages = convert_from_path("dico_shu.pdf")
 
 for i, page in enumerate(pages):
     text = pytesseract.image_to_string(page, lang='ara')
     with open(f"output_{i}.txt", "w", encoding="utf-8") as f:
         f.write(text)</code></pre>
+</section>
 <section id="solutions-et-améliorations" class="level4">
 <h4 class="anchored" data-anchor-id="solutions-et-améliorations">Solutions et améliorations :</h4>
 <ul>
@@ -282,31 +288,45 @@ for i, page in enumerate(pages):
 <li><strong>Correction des erreurs OCR</strong> avec des dictionnaires de mots.</li>
 <li><strong>Segmentation des phrases et tokenization</strong>.</li>
 </ul>
-<p>```dbpikizj title=“preprocessing.py” linenums=“1” import re</p>
-<p>def cle title=“preprocessing.py” linenums=“1”an_text(text): text = text.lower() text = re.sub(r”[^a-zA-Z0-9\s]“,”“, text) # Suppression des caractères spéciaux return text text_cleaned = clean_text(”Allâh est mis en forme étrangement !“) print(text_cleaned) # ‘allah est mis en forme etrangement’</p>
-<pre><code>
-Code APE vrai labelisé par le moteur de règles – nace (732 modalités)
-Prétraitements standards :
+<pre class="{text}"><code>import re  #bibliothèque des expressions régulières
 
-- Passage en minuscules
-- Suppression de la ponctuation, des nombres et des stop words et la racinisation (stemming)
+def clean_text(text):
+    """
+    Fonction de prétraitement du texte :
+    - Convertit le texte en minuscules
+    - Supprime les caractères spéciaux (hors lettres, chiffres et espaces)
+    """
+    text = text.lower()
+    text = re.sub(r"[^a-zA-Z0-9\s]", "", text)  # Suppression des caractères spéciaux
+    return text
 
-### 4. Structuration et tokenization des données
+# exemple d'utilisation
+text_cleaned = clean_text("Allâh est mis en forme étrangement !")
 
-Pour rendre les données exploitables par un modèle NLP, nous devons structurer les textes et segmenter les mots de manière efficace.
-
-- Passage en minusculeske
-- Suppression de la ponctuation, des nombres et des stop words et la racinisation (stemming)
-
-```{r} title="nettoyage.r" linenums="1"
-Cerertains mots en ltexte &lt;- "Allah est grand et miséricordieux"
+print(text_cleaned)  
+# Sortie : 'allh est mis en forme etrangement'</code></pre>
+<p><strong>Prétraitements standards :</strong></p>
+<ul>
+<li>Passage en minuscules</li>
+<li>Suppression de la ponctuation, des nombres et des stop words et la racinisation (stemming)</li>
+</ul>
+</section>
+</section>
+<section id="structuration-et-tokenization-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="structuration-et-tokenization-des-données">4. Structuration et tokenization des données</h3>
+<p>Pour rendre les données exploitables par un modèle NLP, nous devons structurer les textes et segmenter les mots de manière efficace.</p>
+<ul>
+<li>Passage en minusculeske</li>
+<li>Suppression de la ponctuation, des nombres et des stop words et la racinisation (stemming)</li>
+</ul>
+<pre class="{text}"><code>Cerertains mots en ltexte &lt;- "Allah est grand et miséricordieux"
 tokens &lt;- tokenize_words(texte)
 print(tokens)</code></pre>
-<p>Défi :od- Certains mots en langues tchadiennes sont <strong>concaténés</strong> et difficiles à segmenter sans un lexique adapté.</p>
+<p>Certains mots en langues tchadiennes sont <strong>concaténés</strong> et difficiles à segmenter sans un lexique adapté.</p>
 <ul>
 <li>Certaines langues utilisent <strong>des déclinaisons riches</strong>, rendant la tokenization plus complexe.</li>
 </ul>
-<p><strong>Solutions possibles :</strong></p>
+<p><strong>Vous devez envisager à:</strong></p>
 <ul>
 <li>Développer un tokenizer spécifique en utilisant un <strong>modèle statistique basé sur les fréquences des mots</strong>.</li>
 <li>Entraîner un <strong>modèle de segmentation de mots</strong> en deep learning pour affiner la tokenization.</li>
@@ -314,7 +334,6 @@ print(tokens)</code></pre>
 
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
