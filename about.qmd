@@ -30,19 +30,19 @@ Les langues tchadiennes, sont confrontées à plusieurs défis majeurs et pourta
 
 1.  **Création et élargissement du corpus linguistique** : Développer une méthodologie d'acquisition de données comprenant une liste thématique de vocabulaire essentiel (au moins 1000 termes par langue) à travers aussi la mise en place des "*marathons linguistiques*" dans les différentes régions du Tchad, où les locuteurs natifs contribuent directement à l'enrichissement des bases de données. Recueillir pour chaque entrée lexicale un minimum de deux (2) phrases contextuelles illustrant l'usage authentique. Enfin, nous documentons les variations dialectales et régionales au sein de chaque langue tout en formant des "*ambassadeurs linguistiques*" dans chaque communauté, responsables de la qualité des données recueillies
 
-2.  **Consolidation des ressources linguistiques** : Centraliser l'ensemble des ressources linguistiques disponibles et collecetées (dictionnaires, livres de grammaires et vocabulaires et articles scientifiques, corpus de textes, ...) dans une base de données unifiée et structurée. Par la suite, indexer les sources existantes selon des critères linguistiques (phonologie, morphologie, syntaxe) pour faciliter les recherches ultérieures.
+2.  **Consolidation des ressources linguistiques** : Centraliser l'ensemble des ressources linguistiques disponibles et collecetées (dictionnaires, livres de grammaires et vocabulaires et articles scientifiques, corpus de textes, ...) dans une base de données unifiée et structurée. Par la suite, indexer les sources existantes selon des critères linguistiques (phonologie, morphologie, syntaxe) pour faciliter les recherches ultérieures
 
-3.  **Documentation sonore** : Constituer une base de données audio de haute qualité d'au moins *10h* avec des locuteurs natifs (hommes/femmes); enregistrer systématiquement le lexique, les phrases types et des échantillons de discours naturel (récits, conversations) à travers le protocole d'enregistrement normalisé (format audio *WAV*, 1600hz, pas de bruit de fond, ...) pour garantir la qualité et la cohérence des données.
+3.  **Documentation sonore** : Constituer une base de données audio de haute qualité d'au moins *10h* avec des locuteurs natifs (hommes/femmes); enregistrer systématiquement le lexique, les phrases types et des échantillons de discours naturel (récits, conversations) à travers le protocole d'enregistrement normalisé (format audio *WAV*, 1600hz, pas de bruit de fond, ...) pour garantir la qualité et la cohérence des données
 
-4.  **Accessibilité numérique** : Créer une plateforme en ligne permettant la consultation de ressources lexicographiques interactives (à partir de nos collectes antérieurs de données) Produire et publier des dictionnaires électroniques et visuels en formats PDF et HTML. Développer une API permettant l'interrogation programmatique des ressources linguistiques.
+4.  **Accessibilité numérique** : Créer une plateforme en ligne permettant la consultation de ressources lexicographiques interactives (à partir de nos collectes antérieurs de données) Produire et publier des dictionnaires électroniques et visuels en formats PDF et HTML. Développer une API permettant l'interrogation programmatique des ressources linguistiques
 
-5.  **Développement d'outils NLP et grand models du langage (LLMs)**: Créer des modèles de tokenisation adaptés aux particularités morphologiques de nos langues et développer des modèles de traitement du langage naturel (*ASR, TTT, TTS, ...*) et des modèles de reconnaissance vocale d'au moins 5 langues tchadiennes majeures et des systèmes de traduction automatique entre ces langues et les langues étrangères (anglais, français et arabe). Et puis, développer une API permettant l'interrogation programmatique des ressources linguistiques.
+5.  **Développement d'outils NLP et grand models du langage (LLMs)**: Créer des modèles de tokenisation adaptés aux particularités morphologiques de nos langues et développer des modèles de traitement du langage naturel (*ASR, TTT, TTS, ...*) et des modèles de reconnaissance vocale d'au moins 5 langues tchadiennes majeures et des systèmes de traduction automatique entre ces langues et les langues étrangères (anglais, français et arabe). Et puis, développer une API permettant l'interrogation programmatique des ressources linguistiques
 
 6.  **Cartographie linguistique numérique du Tchad :** Etablir une carte interactive des langues tchadiennes identifiant les zones géographiques, le nombre approximatif de locuteurs et leur statut de vitalité
 
-7.  **Formation des linguistiques et étudiants tchadiens en technologies linguistiques** : Établir un programme de formation de jeunes informaticiens tchadiens aux techniques du NLP; Organiser des ateliers pratiques sur le développement d'applications linguistiques. Créer un laboratoire (A-tougoui-\>Chad) permanent de recherche en technologies linguistiques à N'Djamena.
+7.  **Formation des linguistiques et étudiants tchadiens en technologies linguistiques** : Établir un programme de formation de jeunes informaticiens tchadiens aux techniques du NLP; organiser des ateliers pratiques sur le développement d'applications linguistiques. Créer un laboratoire (A-tougoui-\>Chad) permanent de recherche en technologies linguistiques à N'Djamena
 
-8.  **Mise en place d'un modèle économique pérenne** pour assurer la continuité du projet au-delà du financement initial.
+8.  **Mise en place d'un modèle économique pérenne** pour assurer la continuité du projet au-delà du financement initial
 
 9.  **Rendre les modèles développés open source** : Les modèles que nous développons seront ouverts et accessibles à toute la communauté tchadienne et scientifique pour qu'elle puisse améliorer, proposer des solutions et tant d'autres applications dans le respect stricte de la licence de ce projet.
 
@@ -54,7 +54,7 @@ Les langues tchadiennes, sont confrontées à plusieurs défis majeurs et pourta
 -   Mise en place d'une *plateforme de crowdsourcing* denommée "Kalam-Na" pour la collecte de données linguistiques
 -   Ateliers d'enregistrement audio avec des locuteurs natifs de différentes générations
 -   Documentation des variations dialectales et sociolectales
--   Mise en place d'une plateforme de **crowdsourcing** \[\_**Kalam-Na-Nahadjou**\_\] pour une collecte interactive des données textuelles et audio de ces langues.
+-   Mise en place d'une plateforme de **crowdsourcing** \[***Kalam-Na-Nahadjou***\] pour une collecte interactive des données textuelles et audio de ces langues.
 
 ### 2. Traitement et annotation des données
 
@@ -87,7 +87,7 @@ Ce projet transformera non seulement la place des langues tchadiennes dans l'éc
 -   Revalorisation des langues locales auprès des jeunes générations
 -   Préservation numérique du patrimoine linguistique
 -   Réduction de la fracture numérique linguistique
--   Création d'un écosystème d'outils open-source réutilisables (nous mettons les modèles en pen source sous la **licence MIT**)
+-   Création d'un écosystème d'outils open-source réutilisables (nous mettons les modèles en pen source sous la **licence MIT** & **Apache 2.0**)
 -   Intégration des langues locales dans les technologies mainstream
 -   Développement d'applications (centrées) centrées sur les besoins locaux
 
@@ -95,6 +95,6 @@ Ce projet transformera non seulement la place des langues tchadiennes dans l'éc
 
 Le projet **Kalam-Na** ambitionne de créer un modèle reproductible pour d'autres langues africaines peu dotées de corpus et peut contribuer à un écosystème numérique multilingue plus inclusif. La méthodologie développée pourra être adaptée à d'autres régions du monde confrontées à des défis similaires de préservation linguistique.
 
-Nous visons à positionner les langues africaines non pas comme simples objets d'étude ethnolinguistique, mais comme langues pleinement fonctionnelles dans l'écosystème numérique du 21ème siècle.Cependant, nous vous invitons à explorer ces ressources et si vous voulez contribuer à ce projet d'intérêt général; veuillez nous écrire à travers cet [email](mailto:abdelazizharane@chadainetwork.org).
+Nous visons à positionner les langues tchadinnes et plus largement africaines non pas comme simples objets d'étude ethnolinguistique, mais comme langues pleinement fonctionnelles dans l'écosystème numérique du 21ème siècle.Cependant, nous vous invitons à explorer ces ressources et si vous voulez contribuer à ce projet d'intérêt général; veuillez nous écrire à travers cet [email](mailto:abdelazizharane@chadainetwork.org).
 
 **La documentation, la préservation et la promotion des langues tchadiennes est notre priorité absolue à travers ce projet.**

@@ -7,4 +7,10 @@ page-layout: full
 
 Cette section regroupe et met à disposition des corpus de diverses langues locales, permettant leur exploitation dans le respect des licences dédiées.
 
+::: callout-note
+## Section à venir
+
+Elle sera accessible en avril 2025.
+:::
+
 *L’enrichissement de ces ressources est un processus continu :* cette section sera régulièrement mise à jour afin d’offrir un accès toujours plus étendu aux données linguistiques.
