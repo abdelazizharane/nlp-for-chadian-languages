@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/langues_sara.html",
       "/posts/data_collecte.html",
       "/posts/tokenization.html"
     ]
