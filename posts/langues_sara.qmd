@@ -1,0 +1,324 @@
+---
+title: "Étude des langues Sara du Tchad"
+author: "Abdel-aziz Harane Abounounou"
+date: "2025-03-10"
+categories: [Article, Preprocessing, NLP]
+twitter-card: true
+open-graph: true
+format: 
+  html:
+    theme: cosmo
+    toc: true
+    include-in-header: 
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+---
+
+*Sara-Baguirmi* est une famille composée de 16 langues tchadiennes et qui sont : Bebote, Bebiondo (Nangnda), Bagirmi\[bmi\], Daba\[dgk\], Gor\[gqr\], Gulay\[gvl\], KabaNa, Kaba\[ksp\], Laga\[lap\], Kulfa, Mango\[mge\], Nar, Ngambay\[sba\], Ngam\[nmc\], Mbay\[myb\] et Sar\[bjv\] parlées au Tchad et certaines dans le Nord de la République Centrafricaine (RCA) qui est un pays limitrophe du Tchad. Elles sont de la famille *Nilo-saharienne*.
+
+Dans la région de Doba, les variétés comme Bebote, Gor et Mango sont parlées.
+
+L’objectif de cette journée est d’obtenir une vue d’ensemble 1- des difficultés à collecter, traiter et gérer des données vocales à faibles ressources, 2- de la manière dont les architectures existantes sont robustes aux langues à faibles ressources 3- et du protocole d’évaluation lorsque les locuteurs natifs sont rares.
+
+::: {.callout-note appearance="minimal"}
+## Note {#note}
+
+Toutes ces variétés linguistiques commencent par le préfixe ***sara*** et sont très proches les unes des autres entermes de phonologie et de syntaxe.
+:::
+
+Dans cet article, nous abordons les points suivants :
+
+-   [Les dialectes Sara du Tchad](#les-dialectes-sara-du-tchad)
+-   [Les caractéristiques de ces langues](#les-caracteristiques-de-ces-langues)
+    -   [Phonologie](#phonologie)
+    -   [Morphologie](#morphologie)
+    -   [Syntaxe](#syntaxe)
+    -   [Sémantique](#semantique)
+-   [La collecte, le traitement, l'analyse et la création de corpus](#la-collecte-le-traitement-l-analyse-et-la-creation-de-corpus)
+-   [Les défis liés à cette analyse et rencontrés pendant la collecte](#les-defis-lies-a-cette-analyse-et-rencontres-pendant-la-collecte)
+
+
+## Les dialectes Sara du Tchad {#les-dialectes-sara-du-tchad}
+
+Les dialectes Sara sont parlés principalement dans le sud du Tchad. Ils constituent un groupe linguistique riche avec des variations significatives selon les régions.
+
+## Les caractéristiques de ces langues
+
+L'étude des dialectes Sara passe par l'analyse de plusieurs niveaux linguistiques.
+
+### Phonologie {#phonologie}
+
+La prononciation des mots dans ces 16 langues Sara varie légèrement dans certains cas et de manière significative dans d'autres. Les linguistes distinguent deux types de sons :
+
+1.  **Sons invariants** : Ces sons conservent la même signification pour un mot donné et parfois, il n'y a pas de distinction entre ces sons dans certains de ces dialectes. Cela peut rendre la compréhension plus homogène, mais ce n'est pas universel à toutes les langues Sara.
+
+2.  **Sons distinctifs** : Ces sons, souvent représentés entre crochets \[ \], jouent un rôle crucial dans la différenciation des mots. Ils sont spécifiques à chaque langue et constituent des phonèmes essentiels. Par exemple, dans certains dialectes Sara, les mots *käg* et *k‡µ* peuvent s'écrire de manière similaire, mais leurs sons sont très différents, ce qui change complètement leur signification.
+
+Ces distinctions phonologiques sont fondamentales pour comprendre la richesse et la complexité des langues Sara. Cependant, nous n'avons pas une une étude (une documentation) de ces données sur les répresentations distinctives de sons.
+
+La phonologie des dialectes Sara présente une diversité de sons et de tons qui influencent la signification des mots. *Prenons un exemple d'audio de la langue **Bebote**, **Ngambay** et **Sar** et leur transcription pour bien comprendre.*
+
+[***Exemple :***]{.underline} un échantillon de la langue Bebote, Ngambay et Sar
+
+| Texte | Audio |
+|------------------------------------|------------------------------------|
+| Kànd¸ käg¸ k‡µ nÆ£ ndÏ. | <audio controls src="images/Beb1SS01.wav"></audio> |
+| ùnd-á njîd-njîd. | <audio controls src="images/Nga2190SS01.wav"></audio> |
+| à rèē bíᶉí. | <audio controls src="images/Sar595SS01.wav"></audio> |
+
+### Morphologie {#morphologie}
+
+Ces dialectes possèdent des structures morphologiques variées avec des affixes pour indiquer le temps, l'aspect et la modalité.
+
+### Syntaxe {#syntaxe}
+
+> La syntaxte est l'étude de la manière dont les langues expriment les relations (ordre cohérent et le morphème) entre les mots.
+
+[**Exemple**]{.underline} **:** Dans la phrase "`Mìnjì àndɨ̄ yā̰ wàlá nò̰`", la syntaxe permet d'examiner sa la structure et identifie "`Mìnjì`" comme sujet, "`àndɨ̄`" comme verbe et "`yā̰ wàlá nò̰`" comme complément circonstanciel de lieu.
+
+![Structure de syntaxe des langues Sara](Syntaxe_Ngambay_Kalam-na.png){width="544"}
+
+La syntaxe des dialectes Sara suit ces structures spécifiques avec des règles grammaticales distinctes dont parfois on ne peut pas trouver `sujet + verbe + complément` dans toutes les phrases de Ngambay; l'ordre peut être inversé (*voir figure ci-dessus*). Nous avons le même principe pour les autres langues Sara.
+
+***Alphabet de Ngambay** et **Sar**:*
+
+L'alphabet de Ngambay contient 32 caractères, dont des lettres latines standard et plusieurs lettres avec des signes diacritiques et certaines avec des caractères spéciaux.
+
+::: panel-tabset
+## Alphabet Ngambay
+
+a, a̰, b, ɓ, d, e, ḛ, ə, g, h, i, ḭ, ɨ, j, k, l, m, mb, n, nd, ng, nj, o, o̰, ↄ, p, r, ɗ, s, t, u, ṵ, w, y
+
+## Alphabet Sar
+
+a, a̰, b, ɓ, d, e, ḛ, g, h, i, ḭ, ɨ, j, k, l, m, mb, n, nd, ng, nj, o, o̰, ↄ, p, r, ᶉ, ɗ, s, t, u, ṵ, w, y
+:::
+
+Dans ces deux types d'alphabet, trois idées centrales se dégagent :
+
+-   Nous constatons que dans ces deux alphabets, il y'a des caractères latins et des caractères spécifiques, modifiés
+
+-   Il existe des digrammes (mb, nd, ng, nj) qui sont traités comme des unités distinctes dans le système alphabétique
+
+-   Les diartiques représentent différents sons et se trouvent tous dans les deux cas
+
+Pour pouvoir avoir ces caractères dans ces langues, on utilise une police unicode Charis SIL (Doulos SIL) qui sont spécialement conçues pour la linguistique.
+
+
+---
+
+### Sémantique
+
+La sémantique de ces dialectes met en lumière des significations contextuelles variant selon l'intonation et le contexte d'utilisation.
+
+## La collecte, le traitement, l'analyse et la création de corpus
+
+L'élaboration d'un corpus pour les langues `Sara-Baguirmi` est primordiale pour développer des `modèles ASR (Automatic Speech Recognition - Reconnaissance automatique de la parole)` et `TTS (Text-to-Speech ou Texte en parole)`. Cependant, à ce jour, il existe très peu de données disponibles sur ces langues. Les sources existantes proviennent souvent de travaux académiques réalisés par des étudiants dans le cadre de leurs mémoires de fin d'études ou d'études menées par des organisations missionnaires (principalement à travers des missions réligieuses catholique). Il est souvent difficile de trouver des publications ou des références fiables sur ces travaux.
+Pour pallier ce manque de données, nous avons constituer un corpus textuel (*paire - dialectes Sara vs francais*) et audio (la transcription) sur ces *12 langues*.
+
+**Analyse des données audio**
+
+| Langue    | Nombre d'audios | Durée totale (minutes) |
+|-----------|-----------------|------------------------|
+| Bebote    | 2153            | 67.82                  |
+| Daba      | 2053            | 67.44                  |
+| Gor       | 2622            | 92.95                  |
+| Gulay     | 3446            | 117.05                 |
+| Kaba      | 1817            | 70.99                  |
+| KabaNa    | 5692            | 146.11                 |
+| Laka      | 3164            | 86.98                  |
+| Mango     | 3417            | 118.82                 |
+| Nar       | 3302            | 96.51                  |
+| Ngambay   | 5628            | 143.57                 |
+| Ngam      | 610             | 24.18                  |
+| Sar       | 3488            | 109.98                 |
+| **Total** | **37392**       | **1142.4**             |
+
+: Les données audio collectées pour les 11 langues {.striped .hover}
+
+Nous avons au total **37 392 audio** soit **1 142.4 min** soit **19h 2min 24sec** d'audios enregistrées sur ces 12 langues. Ces derniers ont été convertis de format **mp3** à **wav** et équilibré tous sur une taille d'échantillonnage de **16 bits** et un seul cannal (*mono*).
+
+A travers ces 19h, nous pourrons d'ores et déjà, affiner (fine-tuning) les modèles pré entrainés [**Wav2vec**](https://arxiv.org/abs/1904.05862 "Article scientifique de Wav2vec") et [**Whisper**](https://cdn.openai.com/papers/whisper.pdf "Article Whisper for OpenAI"). Nous testons ces données sur ces deux modèles et d'en choisir, après évaluation, le meilleur pour un déploiement et ouverture à la communauté. Donc, nous nous sommes engagés dans le développement d'un seul système de reconnaissance automatique de la parole (ASR) et d'un autre de transcription de la parole (TTS). Il est évident de combiner ces langues de la même famille, où il existe des legères variations phonétiques et syntaxiques, dans un seul gros système. Pour faire, **tout le travail de ce projet, dans ces cas d'applications, se base sur le pipeline suivant :**
+
+![Pipeline d'applications d'ASR et TTS créé par l'auteur](images/ASR%20-%20TTS%20-%20Kalam-na.jpg)
+
+[**La différence entre ASR et TTS**]{.underline} :
+
+| **Caractéristique** | **Wav2Vec 2** | **Whisper** |
+|------------------------|------------------------|------------------------|
+| **Type d’apprentissage** | Auto-supervisé | Supervisé |
+| **Besoin de labels** | Non (*pré-entraînement*), Oui (f*ine-tuning*) | Oui |
+| **Architecture** | CNN + Transformer | CNN + Transformer encodeur-décodeur |
+| **Masquage du signal** | Oui | Non |
+| **Tâches** | Reconnaissance vocale (ASR) | ASR, traduction, détection de langue |
+| **Multilingue** | Possible avec fine-tuning | Oui (natif) |
+
+::: callout-tip
+Nous sommes persuadés que ceci permettra à la communauté de développer des solutions éducatives et répondre aux défis que notre pays fait face à travers notre modèle que nous envisageons d'ouvrir certains de ses caractéristiques en *open source*.
+
+Nous comptons sur vous pour une meilleure contribution et amélioration.
+:::
+
+**Onde d'un audio Bebote**
+
+![Onde d'un audio Bebote qui fait 1.52 secondes](images/audio%20analyse%20visuelle%20onde.png)
+
+Nous utilisons le pipeline suivant dans toutes nos applications de modèles ASR et TTS dans ce projet `Kalam-na`.
+
+
+**Taux d'erreur de mots (WER)**
+
+Le WER est une mesure permettant d'évaluer les performances des modèles ASR. Il permet de mesurer la proximité d'une prédiction textuelle avec une référence textuelle. Sa formule de mesure est la suivante : $$
+\text{WER} = \frac{S + D + I}{N}
+$$
+
+où :
+
+-   ( S ) : nombre d'erreurs de substitution
+-   ( D ) : nombre d'erreurs de suppression
+-   ( I ) : nombre d'erreurs d'insertion
+-   ( N ) : nombre total de mots dans la référence
+
+Il enregistre trois types d'erreurs :
+
+-   **Substitutions (S)** : une erreur de substitution est enregistrée lorsque la prédiction contient un mot différent du mot analogue de la référence. Par exemple, cela se produit lorsque la prédiction orthographie mal un mot de la référence
+-   **Suppressions (D)** : une erreur de suppression est enregistrée lorsque la prédiction contient un mot qui n'est pas présent dans la référence
+-   **Insertions (I)** : une erreur d'insertion est enregistrée lorsque la prédiction ne contient pas un mot présent dans la référence.
+
+
+## Les défis liés à cette analyse et rencontrés pendant la collecte 
+
+Les défis liés à cette étude des dialectes Sara sont le **manque de ressources linguistiques** (dictionnaires, bases de données existantes); la **difficulté d'accès aux locuteurs natifs** pour une collecte représentative; la **variabilité des dialectes** qui rend l'analyse plus complexe et la **limitations techniques** pour l'enregistrement et l'entraimement des modèles.
+
+### Complexité de collecte
+
+Cette phase est la plus complexe dans cette étude : comment peut-on collecter des données au moment où on a des linguistes agueris, ni une accessibilité aux personnes ressources  et une bonne référence des articles publiés dans la linguistique. 
+Plusieurs interrogations se sont surgis lorsqu'on a débuté avec ce projet.
+
+
+
+------------------------------------------------------------------------
+
+**AUTEUR :**
+
+```{=html}
+<div style="display: flex; justify-content: flex-start; margin-bottom: 30px; max-width: 100%;">
+  <div style="display: flex; align-items: center; background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.05); flex-wrap: wrap;">
+    <img src="images/AbdelazizHaraneprofil.png" alt="Abdel-aziz Harane" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #4682B4; flex-shrink: 0;">
+    <div style="min-width: 200px;">
+    <h3 style="margin: 0; color: #333;">Abdel-aziz Harane Abounounou</h3>
+    <p style="margin: 5px 0 0 0; color: #666; font-style: italic;">Ingénieur en IA<br>Fondateur et Coordonnateur général, Chad AI Network</p>
+    </div>
+  </div>
+</div>
+```
+
+------------------------------------------------------------------------
+
+<!-- Ajout de la section boutons de partage  -->
+**Partager avec votre communauté** 
+
+```{=html}
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 15px;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.share-button:hover {
+  transform: translateY(-3px);
+}
+
+.twitter {
+  background-color: #1DA1F2;
+}
+
+.twitter:hover {
+  background-color: #0c85d0;
+}
+
+.facebook {
+  background-color: #4267B2;
+}
+
+.facebook:hover {
+  background-color: #365899;
+}
+
+.linkedin {
+  background-color: #0077B5;
+}
+
+.linkedin:hover {
+  background-color: #00669c;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.whatsapp:hover {
+  background-color: #20bd5a;
+}
+
+.email {
+  background-color: #EA4335;
+}
+
+.email:hover {
+  background-color: #d33426;
+}
+</style>
+
+<div class="share-buttons">
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={window.location.href}&title=Team Kal - Projet NLP pour les langues africaines" target="_blank" class="share-button linkedin" aria-label="Partager sur LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={window.location.href}" target="_blank" class="share-button facebook" aria-label="Partager sur Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>  
+  
+  <a href="https://twitter.com/intent/tweet?url={window.location.href}&text=Découvrez la Team Kal et leur projet sur les langues africaines!" target="_blank" class="share-button twitter" aria-label="Partager sur Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://api.whatsapp.com/send?text=Découvrez la Team Kal: {window.location.href}" target="_blank" class="share-button whatsapp" aria-label="Partager sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <a href="mailto:?subject=Team Kal - Projet NLP pour les langues africaines&body=Découvrez ce projet passionnant: {window.location.href}" class="share-button email" aria-label="Partager par email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remplacer les occurrences de {window.location.href} par l'URL actuelle
+    const currentUrl = encodeURIComponent(window.location.href);
+    const shareLinks = document.querySelectorAll('.share-button');
+    
+    shareLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        link.setAttribute('href', href.replace('{window.location.href}', currentUrl));
+      }
+    });
+  });
+</script>
+```

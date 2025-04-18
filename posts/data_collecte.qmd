@@ -1,6 +1,6 @@
 ---
 title : "Collecte des données sur les langues tchadiennes"
-author: "Abdel-aziz Harane"
+author: "Abdel-aziz Harane Abounounou"
 date: "2025-02-12"
 categories: [Data, Article]
 ---
@@ -17,3 +17,113 @@ J'espère qu'il vous sera utile. Il y a beaucoup de choses à discuter ici du c�
 :::
 
 Dans un projet NLP, la phase la plus complexe est la collecte et le traitement des données. Pour ce projet, c'est un défi majeur (qui m'a pris 4 mois), notamment en raison du manque de ressources structurées et de la diversité des formats de données. Dans cet article, nous allons aborder **les différentes étapes et défis liés à l’extraction, la transformation et la structuration des données linguistiques** obtenues à partir de sources variées (textes religieux, vocabulaires, grammaires) en utilisant **R** et **Python**.
+
+
+
+
+
+
+---
+**Partager avec votre communauté**
+<!-- Ajout de la section boutons de partage  -->
+```{=html}
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 15px;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.share-button:hover {
+  transform: translateY(-3px);
+}
+
+.twitter {
+  background-color: #1DA1F2;
+}
+
+.twitter:hover {
+  background-color: #0c85d0;
+}
+
+.facebook {
+  background-color: #4267B2;
+}
+
+.facebook:hover {
+  background-color: #365899;
+}
+
+.linkedin {
+  background-color: #0077B5;
+}
+
+.linkedin:hover {
+  background-color: #00669c;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.whatsapp:hover {
+  background-color: #20bd5a;
+}
+
+.email {
+  background-color: #EA4335;
+}
+
+.email:hover {
+  background-color: #d33426;
+}
+</style>
+
+<div class="share-buttons">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={window.location.href}&title=Collecte des données sur les langues tchadiennes" target="_blank" class="share-button linkedin" aria-label="Partager sur LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={window.location.href}" target="_blank" class="share-button facebook" aria-label="Partager sur Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a> 
+  <a href="https://twitter.com/intent/tweet?url={window.location.href}&text=Collecte des données sur les langues tchadiennes" target="_blank" class="share-button twitter" aria-label="Partager sur Twitter (X)">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://api.whatsapp.com/send?text=Découvrez la Team Kal: {window.location.href}" target="_blank" class="share-button whatsapp" aria-label="Partager sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <a href="mailto:?subject=Team Kal - Projet NLP pour les langues africaines&body=Découvrez ce projet passionnant: {window.location.href}" class="share-button email" aria-label="Partager par email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remplacer les occurrences de {window.location.href} par l'URL actuelle
+    const currentUrl = encodeURIComponent(window.location.href);
+    const shareLinks = document.querySelectorAll('.share-button');
+    
+    shareLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        link.setAttribute('href', href.replace('{window.location.href}', currentUrl));
+      }
+    });
+  });
+</script>
+```
